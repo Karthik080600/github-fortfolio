@@ -1,0 +1,14 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>QR for the frame</title>
+<style>body{font-family:system-ui;max-width:420px;margin:30px auto;padding:0 16px;text-align:center}input{width:100%;padding:10px;font-size:1rem;margin:10px 0}#qr{display:inline-block;padding:16px;background:#fff}</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script></head>
+<body><h2>QR code for the frame</h2>
+<p>Paste your GitHub Pages URL, then print this and stick it on the frame (not on the poster).</p>
+<input id="u" placeholder="https://yourname.github.io/spirited-ar/">
+<div id="qr"></div>
+<script>
+const u=document.getElementById('u'),q=document.getElementById('qr');
+u.value=location.href.replace(/qr\.html.*$/,'');
+let c;function d(){q.innerHTML='';c=new QRCode(q,{text:u.value,width:256,height:256,correctLevel:QRCode.CorrectLevel.H})}
+u.oninput=d;d();
+</script></body></html>
